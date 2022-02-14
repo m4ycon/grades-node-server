@@ -1,5 +1,5 @@
 {
-  "name": "mandoubem-node",
+  "name": "grades-node-server",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -7,7 +7,7 @@
     "dev": "tsnd --respawn --poll ./src/index.ts",
     "lint": "eslint --ignore-path .gitignore --ext .js,.ts src"
   },
-  "repository": "https://github.com/m4ycon/mandoubem-node.git",
+  "repository": "https://github.com/m4ycon/grades-node-server.git",
   "author": "Maycon Fabio <m.vinnicyus@gmail.com>",
   "license": "MIT",
   "dependencies": {
