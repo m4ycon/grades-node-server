@@ -2,7 +2,7 @@
 services:
   server:
     build: .
-    command: npm start
+    command: yarn dev
     ports:
       - 3000:3000
     volumes:
