@@ -1,6 +1,9 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
+// migration example with docker
+// docker-compose exec server yarn prisma migrate dev --name added_subjects_and_grades
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -13,6 +16,27 @@ datasource db {
 model User {
   id        String    @id @default(uuid())
   email     String    @unique
+  subjects  Subject[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Subject {
+  id        String    @id @default(uuid())
+  name      String
+  student   User      @relation(fields: [studentId], references: [id])
+  studentId String
+  grades    Grade[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Grade {
+  id        String    @id @default(uuid())
+  grade     Float
+  weight    Float
+  subject   Subject   @relation(fields: [subjectId], references: [id])
+  subjectId String
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
 }
