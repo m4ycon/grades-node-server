@@ -5,8 +5,8 @@ const HOST = '0.0.0.0'
 
 const app = express()
 
-app.get('/', (req, res) => {
-  return res.send('Hello World!')
+app.get('/status', (req, res) => {
+  res.json({ message: 'Everything OK! :)' })
 })
 
 app.listen(PORT, HOST, () => console.log(`Running on ${HOST}:${PORT}`))
