@@ -3,6 +3,8 @@
 
 // migration example with docker
 // docker-compose exec server yarn prisma migrate dev --name added_subjects_and_grades
+// run migrations with docker
+// docker-compose exec server yarn prisma migrate dev
 
 generator client {
   provider = "prisma-client-js"
